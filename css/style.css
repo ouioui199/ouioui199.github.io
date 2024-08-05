@@ -127,8 +127,8 @@ html {
     align-items: center;
     position: relative;
     background-color: transparent;
-    transition: background-color 0s ease,
-                border 0s ease;
+    transition: background-color 0.3s,
+                border 0.3s;
 }
 
 @keyframes showMenu {
@@ -166,15 +166,15 @@ html {
     transform: translateY(7px)
 }
 
-:is(.header__button:focus-within) .header__icon {
+.header__button.active .header__icon {
     background-color: transparent;
 }
 
-:is(.header__button:focus-within) .header__icon::before {
+.header__button.active .header__icon::before {
     transform: rotate(45deg)
 }
 
-:is(.header__button:focus-within .header__button:focus) .header__icon::after {
+.header__button.active .header__icon::after {
     transform: rotate(-45deg)
 }
 
@@ -193,7 +193,19 @@ html {
     top: 50%;
     transform: translateY(-100%);
     text-decoration: none;
+    /* animation:typing 2s steps(40, end), blink-caret .75s step-end 3s; */
+    /* overflow: hidden; */
 }
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
 
 /* || MAIN */
 .main {

@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const body = document.body
     hamburger.addEventListener('click', () => {
         menu.classList.toggle('active')
+        hamburger.classList.toggle('active')
         body.classList.toggle('menu__active')
     })
     menu.querySelectorAll('a').forEach(link => {
