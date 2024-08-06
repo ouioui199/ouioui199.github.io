@@ -127,8 +127,7 @@ ul {
 }
 
 .header__nav a:hover,
-.header__nav a:focus,
-.header__nav a.clicked {
+.header__nav a.active {
     color: var(--BLACK);
 }
 
@@ -425,18 +424,16 @@ ul {
         display: none;
         flex-direction: column;
         justify-content: stretch;
-        width: 100vw;
-        height: 26vh;
+        width: 100%;
         position: fixed;
-        top: var(--HEADER-HEIGHT);
+        top: calc(var(--HEADER-HEIGHT) - 1.5vh);
         left: 0;
         background-color: var(--WSM);
-        padding-bottom: 1vh;
         padding-left: calc(var(--HEADER-LRMARGIN) + 2vw);
     }
 
     .menu__active .intro__fig {
-        margin-top: 21vh;
+        margin-top: 16vh;
     }
 
     .header__button:hover {
@@ -458,11 +455,6 @@ ul {
     .main__article {
         flex-direction: column;
         align-items: center;
-    }
-
-    .about {
-        display: flex;
-        flex-flow: column-reverse nowrap;
     }
 
     .about__text {

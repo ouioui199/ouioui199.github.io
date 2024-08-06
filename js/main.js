@@ -1,13 +1,18 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-    const year = document.getElementById("year")
-    const thisYear = new Date().getFullYear()
-    year.setAttribute("datetime", thisYear)
-    year.textContent = thisYear
+const year = document.getElementById("year")
+const thisYear = new Date().getFullYear()
+year.setAttribute("datetime", thisYear)
+year.textContent = thisYear
 
-    const link = document.getElementById("link")
-    link.addEventListener("click", () => {
-        this.classList.add("clicked")
-    })
+const windowPathname = window.location.pathname;
+const navLinks = document.querySelectorAll('nav a')
+navLinks.forEach(navLink => {
+    const navLinkPathname = new URL(navLink.href).pathname
+    if ((windowPathname === navLinkPathname) || (windowPathname === '/index.html' && navLinkPathname === '/')) {
+        navLink.classList.add('active');
+    }
+})
+
+document.addEventListener('DOMContentLoaded', (event) => {
 
     const hamburger = document.getElementById('hamburger')
     const menu = document.getElementById('menu')
@@ -25,26 +30,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
         })
     })
 
-    document.querySelectorAll('a[href^="#about"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault()
+    // document.querySelectorAll('a[href^="#about"]').forEach(anchor => {
+    //     anchor.addEventListener('click', function (e) {
+    //         e.preventDefault()
             
-            // Get the target element
-            const targetId = this.getAttribute('href').substring(1)
-            const targetElement = document.getElementById(targetId)
+    //         // Get the target element
+    //         const targetId = this.getAttribute('href').substring(1)
+    //         const targetElement = document.getElementById(targetId)
 
-            if (targetElement) {
-                // Calculate the offset from the top of the document
-                const headerOffset = document.querySelector('.header').offsetHeight
-                const elementPosition = targetElement.getBoundingClientRect().top
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+    //         if (targetElement) {
+    //             // Calculate the offset from the top of the document
+    //             const headerOffset = document.querySelector('.header').offsetHeight
+    //             const elementPosition = targetElement.getBoundingClientRect().top
+    //             const offsetPosition = elementPosition + window.pageYOffset - headerOffset
 
-                // Smooth scroll to the target element
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth"
-                })
-            }
-        })
-    })
+    //             // Smooth scroll to the target element
+    //             window.scrollTo({
+    //                 top: offsetPosition,
+    //                 behavior: "smooth"
+    //             })
+    //         }
+    //     })
+    // })
 })
