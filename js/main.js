@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         link.addEventListener('click', () => {
             menu.classList.remove('active')
             body.classList.remove('menu__active')
+            hamburger.classList.remove('active')
         })
     })
 

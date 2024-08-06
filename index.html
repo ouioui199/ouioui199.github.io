@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Huy Nguyen</title>
+        <title>Welcome - Huy Nguyen</title>
         <link rel="stylesheet" href="css/style.css">
         <script src="js/main.js" defer></script>
     </head>
@@ -22,6 +22,7 @@
                     <li><a href="cv.html" id="link">CV</a></li>
                     <li><a href="photography.html" id="link">Photography</a></li>
                     <li><a href="blog.html" id="link">Blog</a></li>
+                    <li><a href="#contact" id="link">Contact</a></li>
                 </ul>
             </nav>
         </header>
@@ -33,28 +34,86 @@
             </figure>
         </section>
 
-        <main class="main" id="about">
-            <section class="main__section">
-                <article class="main__article">
+        <main class="main">
+            <article class="main__article about" id="about">
+                <section class="about__text">
                     <h2>About</h2>
                     <hr>
                     <p>
                         Hi, my name is Huy. I grew up in Vietnam but am currently living in France. I am a PhD Researcher at SONDRA, a French-Singaporean laboratory based in CentraleSupelec. My work aims to detect anomalies in complex-valued Synthetic Aperture Radar imaging, by using Self-Supervised Learning techniques.
                     </p>
-                    <br>
                     <p>
                         I love photography, in particular, landscape photography. I have started taking pictures for my friends at school, as a member of the photography club. Then I bought my first camera, the SONY A6000. It was the beginning of a beautiful adventure, a consistent and long self-taught apprenticeship, during which I have become a more mature, independent and responsible person. At that time, I just wanted to make and take better photos. With lots of practice and tutorials, I have mastered my camera and the photos retouching.
                     </p>
-                    <br>
                     <p>
                         That progressive mindset has affected my professional life. When I decide to spend more time in the university’s library, I keep myself learning something new and doing things better everyday. Graduated in 2022, I’ve spent 2 years looking for a PhD thesis opportunity, while working as a Research Engineer. Since October 2024, I have joined the SONDRA laboratory.
                     </p>
-                </article>
+                    <!-- Facts about me: I have a weakness for beautiful shirts, tie and well-tailored suits ;) -->
+                </section>
 
-                <figure class="portrait">
-                    <img src="images/_ALX2228.jpg" alt="My Portrait">
-                </figure>
-            </section>
+                <section class="about__portrait">
+                    <figure>
+                        <img src="images/_ALX2228.jpg" alt="My Portrait">
+                    </figure>
+                </section>
+            </article>
+            
+            <article class="main__article contact" id="contact">
+                <section class="contact__form">
+                    <h2>Get in touch</h2>
+                    <hr>
+                    <ul>
+                        <li>If you are interested in connecting with me, feel free to reach out. I love discussing about photography and am a huge fan of camera gears! I would love to hear your recommendation about beautiful photo spots or photography tricks.</li>
+                        <li>Please use the form below or send me an email at <strong>huy.ngn102@gmail.com</strong>.</li>
+                        <li><strong>For professional purposes: </strong>Please contact me at <strong>xuan-huy.nguyen@cea.fr</strong></li>
+                    </ul>
+                    <form action="https://httpbin.org/get" method="get" autocomplete="on" class="form">
+                        <fieldset class="contact__fieldset">
+                            <legend>
+                                <span class="nowrap">Name</span>
+                                <span class="contact__required nowrap">(required)</span>
+                            </legend>
+                            <p class="contact__p half">
+                                <label class="contact__label" for="fname">First Name</label>
+                                <input type="text" class="contact__input" name="fname">
+                            </p>
+                            <p class="contact__p half">
+                                <label class="contact__label" for="lname">Last Name</label>
+                                <input type="text" class="contact__input" name="lname">
+                            </p>
+                        </fieldset>
+                        <p class="contact__p">
+                            <label for="organization-company" class="contact__label">
+                                <span class="nowrap">Organization/Company</span>
+                            </label>
+                            <input type="text" class="contact__input" name="organization-company">
+                        </p>
+                        <p class="contact__p">
+                            <label for="email" class="contact__label">
+                                <span class="nowrap">Email Address</span>
+                                <span class="contact__required nowrap">(required)</span>
+                            </label>
+                            <input type="text" class="contact__input" name="email">
+                        </p>
+                        <p class="contact__p">
+                            <label for="subject" class="contact__label">
+                                <span class="nowrap">Subject</span>
+                                <span class="contact__required nowrap">(required)</span>
+                            </label>
+                            <input type="text" class="contact__input" name="subject">
+                        </p>
+                        <p class="contact__p">
+                            <label for="message" class="contact__label">
+                                <span class="nowrap">Message</span>
+                                <span class="contact__required nowrap">(required)</span>
+                            </label>
+                            <textarea name="message" id="message" cols="30" rows="10" class="contact__textarea"></textarea>
+                        </p>
+                        <button class="contact__button" type="submit"><strong>SUBMIT</strong></button>
+                    </form>
+                </section>
+            </article>
+
         </main>
 
         <footer class="footer">
