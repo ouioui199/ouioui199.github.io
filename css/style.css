@@ -736,6 +736,14 @@ ul {
     align-items: center;
 }
 
+#lightbox img {
+    max-width: 80%;
+    max-height: 80%;
+    background-color: #000;
+    border: 5px solid #fff;
+    border-radius: 5px;
+}
+
 /* || MEDIA */
 @media screen and (max-width: 769px) {
 
