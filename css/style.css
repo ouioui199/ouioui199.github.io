@@ -335,6 +335,7 @@ ul {
 .contact__p textarea {
     padding: 10px;
     border: 1px solid var(--DARK-GREY);
+    border-radius: 10px;
 }
 
 .contact__fieldset label {
@@ -356,6 +357,7 @@ ul {
     color: var(--WSM);
     font-size: 18px;
     border: none;
+    border-radius: 10px;
 }
 
 /* || FOOTER */
