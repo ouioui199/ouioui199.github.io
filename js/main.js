@@ -70,35 +70,29 @@ document.addEventListener('DOMContentLoaded', (event) => {
 //     modal.style.display = "none";
 // }
 
-// const gallery_photo = document.querySelector('section.gallery__photo')
-// const lightbox = document.createElement('div')
-// lightbox.id = 'lightbox'
-// lightbox.innerHTML = `
-//     <span id="lightbox-close">&times;</span>
-//     <img id="lightbox-image" src="" alt="Lightbox Image">
-// `
-// document.body.appendChild(lightbox)
+const gallery_photo = document.querySelector('section.gallery__photo')
+const lightbox = document.createElement('div')
+lightbox.id = 'lightbox'
+document.body.appendChild(lightbox)
 
-// const images = gallery_photo.querySelectorAll('a')
-// images.forEach(image => {
-//     image.addEventListener('click', e => {
-//         e.preventDefault()
+const images = gallery_photo.querySelectorAll('.grid__item')
+images.forEach(image => {
+    image.addEventListener('click', e => {
+        lightbox.classList.add('active')
 
-//         const src = image.getAttribute('href')
-//         const lightboxImage = document.getElementById('lightbox-image')
-//         lightboxImage.src = src
+        const src = image.querySelector('a').getAttribute('href')
+        const img = document.createElement('img')
+        img.src = src
 
-//         lightbox.classList.add('active')
-//     })
-// })
+        while (lightbox.firstChild) {
+            lightbox.removeChild(lightbox.firstChild)
+        }
 
-// const lightbox = document.createElement('div')
-// lightbox.id = 'lightbox'
-// document.body.appendChild(lightbox)
+        lightbox.appendChild(img)    
+    })
+})
 
-// const images = document.querySelectorAll('img')
-// images.forEach(image => {
-//     image.addEventListener('click', e => {
-//         lightbox.classList.add('active')
-//     })
-// })
+lightbox.addEventListener('click', e => {
+    if (e.target !== e.currentTarget) return
+    lightbox.classList.remove('active')
+})
