@@ -54,45 +54,34 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // })
 })
 
-// function openModal(anchor) {
-//     const modal = document.getElementById("lightboxModal");
-//     const modalImg = document.getElementById("modalImage");
-//     const captionText = document.getElementById("caption");
-
-//     modal.style.display = "block";
-//     modalImg.src = anchor.href;
-//     captionText.innerHTML = anchor.parentNode.dataset.category || '';
-// }
-
-// // Close the Modal
-// function closeModal() {
-//     const modal = document.getElementById("lightboxModal");
-//     modal.style.display = "none";
-// }
-
-const gallery_photo = document.querySelector('section.gallery__photo')
+const gallery_photo = document.querySelector('.gallery__photo')
 const lightbox = document.createElement('div')
 lightbox.id = 'lightbox'
+lightbox.innerHTML = `
+    <span>&times;</span>
+    <img src="" alt="">
+`
 document.body.appendChild(lightbox)
 
 const images = gallery_photo.querySelectorAll('.grid__item')
 images.forEach(image => {
-    image.addEventListener('click', e => {
-        lightbox.classList.add('active')
+    image.onclick = () => {
+        lightbox.style.display = 'flex'
+        lightbox.style.justifyContent = 'center'
+        lightbox.style.alignItems = 'center'
 
-        const src = image.querySelector('a').getAttribute('href')
-        const img = document.createElement('img')
-        img.src = src
-
-        while (lightbox.firstChild) {
-            lightbox.removeChild(lightbox.firstChild)
-        }
-
-        lightbox.appendChild(img)    
-    })
+        const anchor = image.querySelector('a')
+        const img = lightbox.querySelector('img')
+        img.src = anchor.getAttribute('href')
+        img.alt = anchor.getAttribute('data-title')
+    }
 })
 
-lightbox.addEventListener('click', e => {
-    if (e.target !== e.currentTarget) return
-    lightbox.classList.remove('active')
-})
+lightbox.querySelector('span').onclick = () => {
+    lightbox.style.display = 'none'
+}
+
+// lightbox.addEventListener('click', e => {
+//     if (e.target !== e.currentTarget) return
+//     lightbox.classList.remove('active')
+// })

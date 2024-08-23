@@ -730,15 +730,25 @@ ul {
     display: none;
 }
 
-#lightbox.active {
+/* #lightbox.active {
     display: flex;
     justify-content: center;
     align-items: center;
+} */
+
+#lightbox span {
+    position: absolute;
+    top: 0;
+    right: 5vw;
+    font-size: 5vw;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
 }
 
 #lightbox img {
-    max-width: 80%;
-    max-height: 80%;
+     /* max-width: 90%; */
+    max-height: 90%; 
     background-color: #000;
     border: 5px solid #fff;
     border-radius: 5px;
