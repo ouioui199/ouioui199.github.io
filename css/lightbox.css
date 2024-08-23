@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 body.lb-disable-scrolling {
     overflow: hidden;
 }
@@ -167,6 +169,7 @@ body.lb-disable-scrolling {
     font-size: 13px;
     font-weight: bold;
     line-height: 1em;
+    font-family: 'Lato', sans-serif;
 }
   
 .lb-data .lb-caption a {
@@ -174,7 +177,7 @@ body.lb-disable-scrolling {
 }
   
 .lb-data .lb-number {
-    display: block;
+    display: none;
     clear: left;
     padding-bottom: 1em;
     font-size: 12px;
