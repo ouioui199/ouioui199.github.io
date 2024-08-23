@@ -85,3 +85,22 @@ lightbox.querySelector('span').onclick = () => {
 //     if (e.target !== e.currentTarget) return
 //     lightbox.classList.remove('active')
 // })
+
+const gallery_header = document.querySelectorAll('.gallery__header ul li')
+
+const gallery_filter = e => {
+    document.querySelector('.active').classList.remove('active')
+    e.target.classList.add('active')
+    
+    images.forEach(image => {
+        image.classList.add("hide")
+        if (image.dataset.category === e.target.dataset.category) {
+            image.classList.remove('hide')
+        }
+    })
+}
+
+gallery_header.forEach(option => {
+    option.onclick = gallery_filter
+})
+// gallery_header.forEach(option => option.addEventListener("click", gallery_filter))

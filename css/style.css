@@ -720,6 +720,10 @@ ul {
     background-position: center 60%;
 }
 
+.grid__item.hide {
+    display: none;
+}
+
 #lightbox {
     position: fixed;
     z-index: 1000;
@@ -741,7 +745,7 @@ ul {
     top: 0;
     right: 5vw;
     font-size: 5vw;
-    font-weight: bold;
+    /* font-weight: bold; */
     color: #fff;
     cursor: pointer;
 }
