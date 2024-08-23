@@ -55,46 +55,46 @@ document.addEventListener('DOMContentLoaded', (event) => {
 })
 
 const gallery_photo = document.querySelector('.gallery__photo')
-const lightbox = document.createElement('div')
-lightbox.id = 'lightbox'
-lightbox.innerHTML = `
-    <span>&times;</span>
-    <img src="" alt="">
-`
-document.body.appendChild(lightbox)
+// const lightbox = document.createElement('div')
+// lightbox.id = 'lightbox'
+// lightbox.innerHTML = `
+//     <span>&times;</span>
+//     <img src="" alt="">
+// `
+// document.body.appendChild(lightbox)
 
 const images = gallery_photo.querySelectorAll('.grid__item')
-images.forEach(image => {
-    image.onclick = () => {
-        lightbox.style.display = 'flex'
-        lightbox.style.justifyContent = 'center'
-        lightbox.style.alignItems = 'center'
+// images.forEach(image => {
+//     image.onclick = () => {
+//         lightbox.style.display = 'flex'
+//         lightbox.style.justifyContent = 'center'
+//         lightbox.style.alignItems = 'center'
 
-        const anchor = image.querySelector('a')
-        const img = lightbox.querySelector('img')
-        img.src = anchor.getAttribute('href')
-        img.alt = anchor.getAttribute('data-title')
-    }
-})
-
-lightbox.querySelector('span').onclick = () => {
-    lightbox.style.display = 'none'
-}
-
-// lightbox.addEventListener('click', e => {
-//     if (e.target !== e.currentTarget) return
-//     lightbox.classList.remove('active')
+//         const anchor = image.querySelector('a')
+//         const img = lightbox.querySelector('img')
+//         img.src = anchor.getAttribute('href')
+//         img.alt = anchor.getAttribute('data-title')
+//     }
 // })
+
+// lightbox.querySelector('span').onclick = () => {
+//     lightbox.style.display = 'none'
+// }
+
+// // lightbox.addEventListener('click', e => {
+// //     if (e.target !== e.currentTarget) return
+// //     lightbox.classList.remove('active')
+// // })
 
 const gallery_header = document.querySelectorAll('.gallery__header ul li')
 
 const gallery_filter = e => {
-    document.querySelector('.active').classList.remove('active')
+    document.querySelector('.gallery__header').querySelector('.active').classList.remove('active')
     e.target.classList.add('active')
     
     images.forEach(image => {
         image.classList.add("hide")
-        if (image.dataset.category === e.target.dataset.category) {
+        if ((image.dataset.category === e.target.dataset.category) || e.target.dataset.category === 'all') {
             image.classList.remove('hide')
         }
     })
