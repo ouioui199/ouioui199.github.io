@@ -220,6 +220,10 @@ ul {
     font-weight: 400;
 }
 
+.intro__fig figure img {
+    width: 100%;
+}
+
 /* || MAIN */
 .about {
     margin: var(--MAIN-MARGIN);
@@ -691,6 +695,7 @@ ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+    margin: 0 5vw;
 }
 
 .grid__item {
