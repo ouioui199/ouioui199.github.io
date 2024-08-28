@@ -62,14 +62,6 @@ const grid_header = document.createElement('div')
 const gallery_filter = e => {
     document.querySelector('.gallery__header').querySelector('.active').classList.remove('active')
     e.target.classList.add('active')
-
-    
-    lightbox.id = 'lightbox'
-    lightbox.innerHTML = `
-        <span id="lightbox-close">&times;</span>
-        <img id="lightbox-image" src="" alt="Lightbox Image">
-    `
-    document.body.appendChild(lightbox)
     
     images.forEach(image => {
         image.classList.add("hide")
