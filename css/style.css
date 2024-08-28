@@ -383,20 +383,19 @@ ul {
     font-family: var(--FF);
     font-size: 18px;
     flex-flow: column nowrap;
-    /* margin: var(--FOOTER-MARGIN); */
     color: var(--NAVY-BLUE)
 }
 
 .cv h2 {
     font-size: 2rem;
     align-self: center;
-    margin: 1vh auto 0;
+    margin: 2vh auto 0;
 }
 
 .cv hr {
     width: 80%;
     align-self: center;
-    margin: 1vh auto;
+    margin: 2vh auto;
     border-color: var(--NAVY-BLUE);
 }
 
@@ -425,17 +424,17 @@ ul {
     margin: 0 var(--MAIN-LRMARGIN);
 }
 
-.phd p {
+.phd > p {
     align-self: center;
     text-align: justify;
-    margin-bottom: 1vh;
+    margin: 0 10vw 2vh;
 }
 
 .phd .logo--container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     place-items: center;
-    margin-bottom: 1vh;
+    /* margin-bottom: 2vh; */
 }
 
 .phd .logo--container img {
@@ -450,8 +449,12 @@ ul {
     color: var(--NAVY-BLUE);
 }
 
+.exp hr {
+    margin: 2vh 0;
+}
+
 .exp__timeline {
-    margin: 0 auto;
+    margin: 0 auto 2vh;
     display: grid;
     grid-template-columns: 1fr 3px 1fr;
 }
