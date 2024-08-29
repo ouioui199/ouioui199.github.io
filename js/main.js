@@ -20,12 +20,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
     hamburger.addEventListener('click', () => {
         menu.classList.toggle('active')
         hamburger.classList.toggle('active')
-        body.classList.toggle('menu__active')
+        body.classList.toggle('menu-active')
     })
     menu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             menu.classList.remove('active')
-            body.classList.remove('menu__active')
+            body.classList.remove('menu-active')
             hamburger.classList.remove('active')
         })
     })
@@ -54,13 +54,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // })
 })
 
-const gallery_photo = document.querySelector('.gallery__photo')
-const images = gallery_photo.querySelectorAll('.grid__item')
-const gallery_header = document.querySelectorAll('.gallery__header ul li')
+const gallery_photo = document.querySelector('.gallery-photo')
+const images = gallery_photo.querySelectorAll('.grid-item')
+const gallery_header = document.querySelectorAll('.gallery-header ul li')
 const grid_header = document.createElement('div')
 
 const gallery_filter = e => {
-    document.querySelector('.gallery__header').querySelector('.active').classList.remove('active')
+    document.querySelector('.gallery-header').querySelector('.active').classList.remove('active')
     e.target.classList.add('active')
     
     images.forEach(image => {
