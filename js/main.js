@@ -65,8 +65,12 @@ const gallery_filter = e => {
     
     images.forEach(image => {
         image.classList.add("hide")
-        if ((image.dataset.category === e.target.dataset.category) || e.target.dataset.category === 'all') {
+        if (e.target.dataset.category === 'all') {
             image.classList.remove('hide')
+        }
+        else if (image.dataset.category === e.target.dataset.category) {
+            image.classList.remove('hide')
+            image.classList.remove('no-show')
         }
     })
 }
