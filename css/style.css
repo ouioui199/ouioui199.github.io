@@ -72,6 +72,9 @@ html {
     scroll-behavior: smooth;
     background-color: var(--WSM);
     font-family: var(--FF);
+    font-size: 1.125rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .main {
@@ -247,7 +250,6 @@ ul {
     text-align: justify;
     width: var(--MAIN-ARTICLE-WIDTH);
     max-width: none;
-    font-size: 18px;
 }
 
 .about-portrait {
@@ -264,7 +266,6 @@ ul {
 
 /* || CONTACT */
 .contact {
-    font-size: 18px;
     background-color: rgba(239, 239, 239);
 }
 
@@ -333,24 +334,20 @@ ul {
     border-radius: 10px;
 }
 
-.contact-fieldset label {
-    font-size: 15px;
-}
-
 .contact-fieldset .half {
     width: 50%;
 }
 
 .contact-required {
     color: var(--NAVY-BLUE-FD);
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 .contact-button {
     padding: 20px 30px;
     background-color: var(--NAVY-BLUE);
     color: var(--WSM);
-    font-size: 18px;
+    font-size: 1rem;
     border: none;
     border-radius: 10px;
 }
@@ -374,7 +371,6 @@ ul {
 
 /* || CV */
 .cv {
-    font-size: 18px;
     flex-flow: column nowrap;
     color: var(--NAVY-BLUE);
     gap: var(--MAIN-GAP)
@@ -388,7 +384,6 @@ ul {
 .cv hr {
     width: 80%;
     align-self: center;
-    /* margin: var(--MAIN-GAP) auto; */
     border-color: var(--NAVY-BLUE);
 }
 
@@ -458,10 +453,12 @@ ul {
 
 .timeline-component h3 {
     align-self: flex-start;
+    font-size: 1.5rem;
 }
 
 .timeline-component h4 {
-    color: var(--NAVY-BLUE-FD)
+    color: var(--NAVY-BLUE-FD);
+    font-size: 1.25rem;
 }
   
 .timeline-component--bg {
@@ -501,20 +498,16 @@ ul {
 .timeline-date,
 .timeline-date--right {
     flex-shrink: 0;
+    font-size: 1.25rem;
 }
   
 .timeline-date--right {
     text-align: right;
 }
   
-.timeline-title {
-    margin: 0;
-    font-size: 1.15em;
-    font-weight: bold;
-}
-  
 .timeline-paragraph {
     line-height: 1.5;
+    font-size: 1.25rem;
 }
 
 .timeline-component .logo {
@@ -540,7 +533,7 @@ ul {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    margin: 0 var(--MAIN-LRMARGIN);
+    margin: 0 var(--MAIN-LRMARGIN) var(--MAIN-GAP);
     gap: var(--MAIN-GAP)
 }
 
@@ -554,8 +547,8 @@ ul {
   
 .edu-timeline ol {
     font-size: 0;
-    padding: 250px 0;
-    overflow-x: scroll;
+    padding: 200px 0;
+    overflow-x: auto;
 }
   
 .edu-timeline ol li {
@@ -642,12 +635,38 @@ ul {
     color: var(--NAVY-BLUE);
 }
 
+/* || PUBLICATIONS */
+.publications-and-conferences {
+    flex-flow: column nowrap;
+    height: 100vh;
+    margin: var(--MAIN-GAP) var(--MAIN-LRMARGIN);
+    gap: var(--MAIN-GAP)
+}
+
+.publications,
+.conferences {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: var(--MAIN-GAP);
+    justify-content: center;
+    align-items: center;
+}
+
+.publications-and-conferences h2 {
+    font-size: 2rem;
+}
+
+.publications-and-conferences hr {
+    width: 80%;
+    align-self: center;
+    border-color: var(--NAVY-BLUE);
+}
+
 /* || PHOTOGRAPHY */
 .photography {
-    font-size: 18px;
     flex-flow: column nowrap;
     color: var(--NAVY-BLUE);
-    margin: 2vh var(--MAIN-LRMARGIN);
+    margin: var(--MAIN-GAP) var(--MAIN-LRMARGIN);
 }
 
 .gallery-header {
@@ -658,17 +677,17 @@ ul {
 
 .gallery-header h2 {
     align-self: center;
+    font-size: 2rem;
 }
 
 .gallery-header ul {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
+    font-size: 1.25rem;
 }
 
 .gallery-header ul li a {
-    
-    font-size: 1.25rem;
     color: var(--NAVY-BLUE-FD);
     text-decoration: none;
 }
@@ -733,6 +752,33 @@ ul {
     display: none;
 }
 
+/* || PUBLICATIONS */
+.blog {
+    flex-flow: column nowrap;
+    height: 100vh;
+    margin: var(--MAIN-GAP) var(--MAIN-LRMARGIN);
+    gap: var(--MAIN-GAP)
+}
+
+.ai-cv-blog,
+.photography-blog {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: var(--MAIN-GAP);
+    justify-content: center;
+    align-items: center;
+}
+
+.blog h2 {
+    font-size: 2rem;
+}
+
+.blog hr {
+    width: 80%;
+    align-self: center;
+    border-color: var(--NAVY-BLUE);
+}
+
 /* || MEDIA */
 @media screen and (max-width: 1024px) {
 
@@ -785,6 +831,15 @@ ul {
 
         .cv-section {
             width: 100%;
+        }
+
+        .cv-section h1 {
+            font-size: 2.5rem;
+        }
+
+        .cv-section p {
+            font-size: 1.5rem;
+            font-weight: 300;
         }
 
         .phd p {
