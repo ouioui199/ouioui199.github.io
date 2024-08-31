@@ -12,23 +12,14 @@ navLinks.forEach(navLink => {
     }
 })
 
-document.addEventListener('DOMContentLoaded', (event) => {
-
-    const hamburger = document.getElementById('hamburger')
-    const menu = document.getElementById('menu')
-    const body = document.body
-    hamburger.addEventListener('click', () => {
-        menu.classList.toggle('active')
-        hamburger.classList.toggle('active')
-        body.classList.toggle('menu-active')
-    })
-    menu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            menu.classList.remove('active')
-            body.classList.remove('menu-active')
-            hamburger.classList.remove('active')
-        })
-    })
+const hamburger = document.querySelector('.hamburger')
+const navBar = document.querySelector('.nav-bar')
+const body = document.body
+hamburger.onclick =  function () {
+    hamburger.classList.toggle('active')
+    navBar.classList.toggle('active')
+    body.classList.toggle('nav-bar-active')
+}
 
     // document.querySelectorAll('a[href^="#about"]').forEach(anchor => {
     //     anchor.addEventListener('click', function (e) {
@@ -52,7 +43,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     //         }
     //     })
     // })
-})
 
 const gallery_photo = document.querySelector('.gallery-photo')
 const images = gallery_photo.querySelectorAll('.grid-item')
