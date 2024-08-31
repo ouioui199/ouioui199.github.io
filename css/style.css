@@ -36,9 +36,8 @@ img {
 
     /* HEADER */
     --HEADER-HEIGHT: 8vh;
-    --HEADER-TBMARGIN: 0;
-    --HEADER-LRMARGIN: 10vw;
-    --HEADER-MARGIN: var(--HEADER-TBMARGIN) var(--HEADER-LRMARGIN);
+    --HEADER-TBPADDING: 2.5vh;
+    --HEADER-LRPADDING: 10vw;
 
     /* MAIN */
     --MAIN-TBMARGIN: 5vh;
@@ -103,7 +102,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2.5vh var(--MAIN-LRMARGIN);
+    padding: var(--HEADER-TBPADDING) var(--HEADER-LRPADDING);
     box-shadow: 0px 2px 5px var(--DARK-GREY);
 }
 
@@ -771,7 +770,7 @@ p {
     @media screen and (orientation: portrait) {
 
         :root {
-            --HEADER-LRMARGIN: 8vw;
+            --HEADER-LRPADDING: 8vw;
 
             --MAIN-GAP: 2vh;
             --MAIN-TBMARGIN: 3vh;
@@ -916,14 +915,14 @@ p {
     .nav-bar {
         height: 0;
         position: absolute;
-        top: calc(5vh + 1.25rem);
+        top: 0;
+        margin-top: calc(var(--HEADER-TBPADDING) * 2 + 2.5rem - 5px);
         left: 0;
         right: 0;
         width: 100%;
-        padding-left: calc(var(--HEADER-LRMARGIN) + 2vw);
+        padding-left: calc(var(--HEADER-LRPADDING) + 2vw);
         background-color: var(--WSM);
         transition: 0.2s;
-        overflow: hidden;
     }
 
     .nav-bar.active {
@@ -951,7 +950,7 @@ p {
     .nav-bar-active .publications-and-conferences,
     .nav-bar-active .photography,
     .nav-bar-active .blog {
-        margin-top: calc(5vh + 8rem);
+        margin-top: calc(var(--HEADER-TBPADDING) * 2 + 2.5rem - 5px + 6rem);
     }
 
     .hamburger:hover {
@@ -1090,10 +1089,27 @@ p {
 
     :root {
         --MAIN-GAP: 1.5vh;
+        --HEADER-LRPADDING: 12vw;
+        --HEADER-TBPADDING: 2vh;
     }
 
     html {
         font-size: 0.875rem;
+    }
+
+    .nav-bar {
+        padding-left: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-bar ul  {
+        display: flex;
+        flex-flow: column nowrap;
+        text-align: center;
+        width: fit-content;
+        transition: 0.5s;
+        opacity: 0;
     }
 
     .intro-h2 {
