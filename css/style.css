@@ -474,7 +474,7 @@ p {
 }
   
 .timeline-component {
-    margin: 20px 20px 20px 20px;
+    margin: 20px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
@@ -808,9 +808,10 @@ p {
 }
 
 /* || MEDIA */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) and (orientation: portrait)  {
 
-    @media screen and (orientation: lanscape) {
+    /* @media screen and (orientation: lanscape) {
+
         .header-nav ul li a {
             font-size: 1rem;
         }
@@ -822,15 +823,20 @@ p {
         .about-text h2 {
             font-size: 2.5rem;
         }
-    }
+    } */
 
     @media screen and (orientation: portrait) {
+
         :root {
             --HEADER-LRMARGIN: 8vw;
 
             --MAIN-GAP: 2vh;
             --MAIN-TBMARGIN: 3vh;
             --MAIN-LRMARGIN: 8vw;
+        }
+
+        p {
+            line-height: 1.35;
         }
 
         .main-article {
@@ -903,17 +909,14 @@ p {
             width: 50px;
         }
 
-        .publications-and-conferences h2 {
-            font-size: 1.75rem;
-        }
-
-        .blog h2 {
-            font-size: 1.75rem;
+        .gallery-grid {
+            margin: 0;
+            gap: 5px;
         }
     }
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 769px) and (orientation: portrait)  {
 
     :root {
         --MAIN-GAP: 1.75vh;
@@ -921,6 +924,10 @@ p {
 
     html {
         font-size: 1rem;
+    }
+
+    p {
+        line-height: 1.3;
     }
 
     .header-h1 a {
@@ -1002,10 +1009,12 @@ p {
 
     .phd h2, 
     .exp h2,
-    .edu h2 {
+    .edu h2,
+    .gallery-header h2,
+    .publications-and-conferences h2,
+    .blog h2 {
         font-size: 1.75rem;
     }
-
     
     .exp-timeline {
         display: none;
@@ -1015,13 +1024,12 @@ p {
         display: grid;
     }
 
-    .timeline-date, .timeline-date--right {
+    .timeline-date--right {
         font-size: 1.125rem;
     }
 
     .timeline-component {
-        margin: 15px 15px 15px 15px;
-        
+        margin: 15px;
     }
 
     .timeline-component h3 {
@@ -1029,7 +1037,6 @@ p {
     }
 
     .timeline-component h4 {
-        color: var(--NAVY-BLUE-FD);
         font-size: 1rem;
     }
 
@@ -1085,58 +1092,148 @@ p {
         font-size: 1.25rem;
     }
 
-    .gallery-header h2 {
-        font-size: 1.5rem;
-    }
-
     .gallery-header ul {
         font-size: 1rem;
     }
 }
 
-/* @media screen and (max-width: 481px) {
+@media screen and (max-width: 481px) and (orientation: portrait) {
+
+    p {
+        line-height: 1.25;
+    }
+
+    :root {
+        --MAIN-GAP: 1.5vh;
+    }
+
+    html {
+        font-size: 0.875rem;
+    }
+
     .intro-h2 {
-        right: 15vw;
+        right: 12vw;
         top: 50%;
         transform: translateY(-100%);
         text-shadow: none;
-        font-size: calc(2vh + 2vw);
+        font-size: 1.75rem;
     }
 
-    .about-text h2 {
-        font-size: 2rem;
-    }
-
-    .about-text hr {
-        width: 30vw;
-    }
-
-    .about-text p {
-        font-size: 14px;
-    }
-
-    .contact {
-        font-size: 16px;
-    }
-
+    .about-text h2,
     .contact-form h2 {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 
-    .contact-form hr {
-        width: 30vw;
+    .contact-fieldset {
+        display: block;
     }
 
-    .contact-fieldset label {
-        font-size: 13px;
-    }
-    
-    .contact-required {
-        font-size: 10px;
+    .contact-fieldset .half {
+        width: 100%;
     }
     
     .contact-button {
-        padding: 15px 25px;
-        font-size: 16px;
+        padding: 12px 18px;
+        font-size: 0.875rem;
     }
-} */
+
+    .cv-section h1 {
+        font-size: 1.75rem;
+        font-weight: 500;
+    }
+
+    .cv-section p {
+        font-size: 1rem;
+    }
+
+    .phd h2, 
+    .exp h2,
+    .edu h2,
+    .gallery-header h2,
+    .publications-and-conferences h2,
+    .blog h2 {
+        font-size: 1.5rem;
+    }
+
+    .phd .logo--container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px
+    }
+
+    .exp-timeline-one-side {
+        grid-template-columns: 0.75fr 1.5px 1.5fr;
+    }
+
+    .timeline-date--right {
+        font-size: 0.875rem;
+    }
+
+    .timeline-component {
+        margin: 10px;
+    }
+
+    .timeline-component h3 {
+        font-size: 1.125rem;
+    }
+
+    .timeline-component h4 {
+        font-size: 0.875rem;
+    }
+
+    .timeline-component--bg {
+        padding: 1em;
+        gap: 0.25vh;
+        width: 95%;
+    }
+
+    .timeline-component .logo {
+        display: none;
+    }
+
+    .timeline-point {
+        width: 10px;
+        height: 10px;
+    }
+
+    .timeline-paragraph {
+        line-height: 1.3;
+        font-size: 0.875rem;
+    }
+
+    .edu-timeline ol {
+        padding: 150px 0;
+    }
+
+    .edu-timeline ol li {
+        height: 1.5px;
+        width: 100px
+    }
+
+    .edu-timeline ol li:last-child {
+        width: 180px;
+    }
+
+    .edu-timeline ol li:not(:last-child)::after {
+        width: 10px;
+        height: 10px;
+    }
+
+    .edu-timeline ol li div {
+        width: 180px;
+        padding: 10px;
+        font-size: 0.875rem;
+    }
+
+    .edu-timeline time {
+        font-size: 1rem;
+    }
+
+    .gallery-header ul {
+        font-size: 0.875rem;
+    }
+
+    .gallery-grid {
+        margin: 0;
+        gap: 3px;
+    }
+}
