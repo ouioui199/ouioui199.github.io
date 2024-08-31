@@ -550,8 +550,12 @@ p {
     height: 14vh;
 }
 
+.timeline-component .logo img[alt="Logo ONERA"] {
+    height: 6vh;
+}
+
 .timeline-component .logo img[alt="Logo Thales"] {
-    height: 10vh;
+    height: 8vh;
 }
 
 .edu {
