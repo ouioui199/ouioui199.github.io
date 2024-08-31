@@ -935,6 +935,7 @@ p {
         width: fit-content;
         transition: 0.5s;
         opacity: 0;
+        gap: 0.75rem;
     }
 
     .nav-bar.active ul {
@@ -950,7 +951,7 @@ p {
     .nav-bar-active .publications-and-conferences,
     .nav-bar-active .photography,
     .nav-bar-active .blog {
-        margin-top: calc(var(--HEADER-TBPADDING) * 2 + 2.5rem - 5px + 6rem);
+        margin-top: calc(var(--HEADER-TBPADDING) * 2 + 2.5rem - 7px + 5.75rem);
     }
 
     .hamburger:hover {
@@ -1104,12 +1105,7 @@ p {
     }
 
     .nav-bar ul  {
-        display: flex;
-        flex-flow: column nowrap;
         text-align: center;
-        width: fit-content;
-        transition: 0.5s;
-        opacity: 0;
     }
 
     .intro-h2 {
