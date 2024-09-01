@@ -1263,6 +1263,11 @@ p {
         font-size: 1.5rem;
     }
 
+    .phd-description {
+        margin: 0;
+        line-height: 1.25;
+    }
+
     .phd-description ul {
         margin: 3px 0 0 10vw;
     }
@@ -1350,8 +1355,6 @@ p {
 @media screen and (max-width: 1024px) and (orientation: landscape) and (min-device-pixel-ratio: 1.5) {
 
     .phd-description {
-        margin: 0;
-        line-height: 1.25;
         font-size: 8px;
     }
 
