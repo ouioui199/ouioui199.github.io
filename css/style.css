@@ -1244,9 +1244,9 @@ p {
         --HR-RULE-HEIGHT: 1px;
     }
 
-    html {
+    /* html {
         font-size: 0.875rem;
-    }
+    } */
 
     p {
         line-height: 1.25;
@@ -1267,6 +1267,10 @@ p {
     .about-text h2,
     .contact-form h2 {
         font-size: 1.75rem;
+    }
+
+    .about-text p {
+        font-size: 0.875rem;
     }
 
     .form-required {
