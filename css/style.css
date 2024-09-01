@@ -1249,12 +1249,12 @@ p {
         font-size: 1.75rem;
     }
 
-    .contact-text-container { 
+    /* .contact-text-container { 
         font-size: 0.75rem;
-    } 
+    }  */
 
-    .form {
-        font-size: 0.75rem;
+    .contact-text-container p { 
+        line-height: inherit;
     }
 
     .contact-button {
