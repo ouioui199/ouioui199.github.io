@@ -1232,6 +1232,10 @@ p {
         font-size: 1.75rem;
     }
 
+    .contact-text-container {
+        font-size: 9px;
+    }
+
     .contact-button {
         padding: 12px 18px;
         font-size: 0.875rem;
@@ -1258,6 +1262,7 @@ p {
     .phd-description {
         margin: 0;
         line-height: 1.25;
+        font-size: 9px;
     }
 
     .phd-description ul {
