@@ -299,6 +299,7 @@ p {
     font-size: 1rem;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 /* || FOOTER */
