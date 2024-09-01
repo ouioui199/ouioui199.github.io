@@ -24,6 +24,7 @@ img {
     /* FONTS */
     --FF: 'Lato', sans-serif;
     --HEADER-FW: 600;
+    --HR-RULE-HEIGHT: 2px;
 
     /* COLORS */
     --WSM: whitesmoke;
@@ -188,7 +189,7 @@ p {
 
 .about-text hr {
     border: none;
-    border-top: 1px solid var(--LIGHT-BLACK);
+    border-top: var(--HR-RULE-HEIGHT) solid var(--NAVY-BLUE);
     width: 50%;
     align-self: self-start;
 }
@@ -247,7 +248,7 @@ p {
 
 .contact-form hr {
     border: none;
-    border-top: 1px solid var(--LIGHT-BLACK);
+    border-top: var(--HR-RULE-HEIGHT) solid var(--NAVY-BLUE);
     width: 50%;
     align-self: self-start;
 }
@@ -325,7 +326,8 @@ p {
 .cv hr {
     width: 80%;
     align-self: center;
-    border-color: var(--NAVY-BLUE);
+    border: none;
+    border-top: var(--HR-RULE-HEIGHT) solid var(--NAVY-BLUE);
 }
 
 .cv-section {
@@ -621,7 +623,8 @@ p {
 .publications-and-conferences hr {
     width: 80%;
     align-self: center;
-    border-color: var(--NAVY-BLUE);
+    border: none;
+    border-top: var(--HR-RULE-HEIGHT) solid var(--NAVY-BLUE);
 }
 
 /* || PHOTOGRAPHY */
@@ -738,7 +741,8 @@ p {
 .blog hr {
     width: 80%;
     align-self: center;
-    border-color: var(--NAVY-BLUE);
+    border: none;
+    border-top: var(--HR-RULE-HEIGHT) solid var(--NAVY-BLUE);
 }
 
 /* || MEDIA */
@@ -836,6 +840,7 @@ p {
 
     :root {
         --MAIN-GAP: 1.75vh;
+        --HR-RULE-HEIGHT: 1.5px;
     }
 
     html {
@@ -1066,6 +1071,7 @@ p {
         --MAIN-GAP: 1.5vh;
         --HEADER-LRPADDING: 12vw;
         --HEADER-TBPADDING: 2vh;
+        --HR-RULE-HEIGHT: 1px;
     }
 
     html {
@@ -1209,6 +1215,7 @@ p {
 
     :root {
         --MAIN-GAP: 2vh;
+        --HR-RULE-HEIGHT: 1px;
     }
 
     html {
@@ -1241,7 +1248,8 @@ p {
     }
 
     .contact-form .contact-text-container {
-        font-size: 8px;
+        font-size: 0.875rem;
+        -webkit-font-size: 0.875rem;
     }
 
     .contact-form .contact-fieldset {
