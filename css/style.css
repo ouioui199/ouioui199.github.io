@@ -1237,15 +1237,15 @@ p {
     }
 
     .form-required {
-        font-size: 0.5rem;
+        font-size: 0.375rem;
     }
 
     .contact-form .contact-text-container {
-        font-size: 9px;
+        font-size: 8px;
     }
 
     .contact-form .contact-fieldset {
-        font-size: 9px;
+        font-size: 8px;
     }
 
     .contact-button {
