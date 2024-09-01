@@ -1240,6 +1240,14 @@ p {
         font-size: 0.5rem;
     }
 
+    .contact-form .contact-text-container {
+        font-size: 9px;
+    }
+
+    .contact-form .contact-fieldset {
+        font-size: 9px;
+    }
+
     .contact-button {
         padding: 12px 18px;
         font-size: 0.875rem;
@@ -1266,6 +1274,7 @@ p {
     .phd-description {
         margin: 0;
         line-height: 1.25;
+        font-size: 8px;
     }
 
     .phd-description ul {
@@ -1349,20 +1358,5 @@ p {
 
     .gallery-grid {
         gap: 4px;
-    }
-}
-
-@media screen and (max-width: 1024px) and (orientation: landscape) and (min-device-pixel-ratio: 1.5) {
-
-    .phd-description {
-        font-size: 8px;
-    }
-
-    .contact-form .contact-text-container {
-        font-size: 8px;
-    }
-
-    .contact-form .contact-fieldset {
-        font-size: 8px;
     }
 }
