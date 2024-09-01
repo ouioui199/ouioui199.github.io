@@ -1279,6 +1279,7 @@ p {
     .phd-description {
         margin: 0;
         line-height: 1.25;
+        font-size: 0.875rem;
     }
 
     .phd-description ul {
