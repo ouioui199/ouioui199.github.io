@@ -954,7 +954,7 @@ p {
         width: 45%;
     }
 
-    .contact-required {
+    .form-required {
         font-size: 0.675rem;
     }
 
@@ -1236,12 +1236,8 @@ p {
         font-size: 1.75rem;
     }
 
-    .contact-form .contact-text-container {
-        font-size: 8px;
-    }
-
-    .contact-form .contact-fieldset {
-        font-size: 8px;
+    .form-required {
+        font-size: 0.5rem;
     }
 
     .contact-button {
@@ -1265,12 +1261,6 @@ p {
     .publications-and-conferences h2,
     .blog h2 {
         font-size: 1.5rem;
-    }
-
-    .phd-description {
-        margin: 0;
-        line-height: 1.25;
-        font-size: 8px;
     }
 
     .phd-description ul {
@@ -1354,5 +1344,22 @@ p {
 
     .gallery-grid {
         gap: 4px;
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) and (min-device-pixel-ratio: 2) {
+
+    .phd-description {
+        margin: 0;
+        line-height: 1.25;
+        font-size: 8px;
+    }
+
+    .contact-form .contact-text-container {
+        font-size: 8px;
+    }
+
+    .contact-form .contact-fieldset {
+        font-size: 8px;
     }
 }
