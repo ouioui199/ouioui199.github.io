@@ -1249,12 +1249,16 @@ p {
         font-size: 1.75rem;
     }
 
-    /* .contact-text-container { 
-        font-size: 0.75rem;
-    }  */
+    .contact-text-container { 
+        font-size: inherit;
+    } 
 
     .contact-text-container p { 
         line-height: inherit;
+    }
+
+    .contact-p {
+        font-size: 0.875rem;
     }
 
     .contact-button {
@@ -1280,7 +1284,7 @@ p {
         font-size: 1.5rem;
     }
 
-    .phd-description {
+    .phd-description p {
         margin: 0;
         line-height: 1.25;
         font-size: 0.75rem;
@@ -1288,7 +1292,6 @@ p {
 
     .phd-description ul {
         margin: 3px 0 0 10vw;
-        
     }
 
     .phd-description ul li {
