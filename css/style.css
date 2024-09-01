@@ -1273,10 +1273,10 @@ p {
         font-size: 0.375rem;
     }
 
-    /* .contact-form .contact-text-container {
-        font-size: 8px;
+     .contact-form .contact-text-container {
+        font-size: 1vw;
     }
-
+/*
     .contact-form .contact-fieldset {
         font-size: 8px;
     } */
