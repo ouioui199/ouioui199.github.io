@@ -298,12 +298,11 @@ p {
 .footer {
     background-color: var(--NAVY-BLUE);
     color: var(--WSM);
-    padding: 20px 0;
+    padding: 1vh 0;
     text-align: center;
 }
 
 .footer-content p {
-    /* margin: 10px 0; */
     font-size: 1.125rem;
 }
 
@@ -311,14 +310,6 @@ p {
     display: flex;
     justify-content: center;
 }
-
-/* .social-icon {
-    margin: 0 10px;
-    color: var(--WSM);
-    text-decoration: none;
-    font-size: 20px;
-    transition: color 0.3s;
-} */
 
 .social-icons a {
     text-decoration: none;
@@ -330,12 +321,7 @@ p {
 .social-icons a i{
     font-size: 1.5rem;
     color: var(--NAVY-BLUE);
-    opacity: 0.9;
 }
-
-/* .footer div {
-    margin: var(--FOOTER-MARGIN);
-} */
 
 /* || CV */
 .cv {
@@ -1136,6 +1122,19 @@ p {
         font-size: 0.875rem;
     }
 
+    .footer-content p {
+        font-size: 0.875rem;
+    }
+    
+    .social-icons a {
+        padding: 8px;
+        margin: 8px;
+    }
+
+    .social-icons a i{
+        font-size: 1.25rem;
+    }
+
     .cv-section h1 {
         font-size: 1.75rem;
         font-weight: 500;
@@ -1353,7 +1352,7 @@ p {
     }
 
     .edu-timeline ol {
-        padding: 160px 0;
+        padding: 180px 0;
     }
 
     .edu-timeline ol li {
