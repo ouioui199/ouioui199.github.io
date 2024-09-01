@@ -1244,9 +1244,9 @@ p {
         --HR-RULE-HEIGHT: 1px;
     }
 
-    /* html {
+    html {
         font-size: 0.875rem;
-    } */
+    }
 
     p {
         line-height: 1.25;
@@ -1269,21 +1269,9 @@ p {
         font-size: 1.75rem;
     }
 
-    .about-text p {
-        font-size: 0.875rem;
-    }
-
     .form-required {
         font-size: 0.375rem;
     }
-
-     .contact-form .contact-text-container {
-        font-size: 1vw;
-    }
-/*
-    .contact-form .contact-fieldset {
-        font-size: 8px;
-    } */
 
     .contact-button {
         padding: 12px 18px;
@@ -1311,7 +1299,6 @@ p {
     .phd-description {
         margin: 0;
         line-height: 1.25;
-        /* font-size: 8px; */
     }
 
     .phd-description ul {
