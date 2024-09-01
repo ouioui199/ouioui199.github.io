@@ -1347,7 +1347,7 @@ p {
     }
 }
 
-@media screen and (max-width: 1024px) and (orientation: landscape) and (min-device-pixel-ratio: 2) {
+@media screen and (max-width: 1024px) and (orientation: landscape) and (min-device-pixel-ratio: 1.5) {
 
     .phd-description {
         margin: 0;
