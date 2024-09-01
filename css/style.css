@@ -252,42 +252,33 @@ p {
     align-self: self-start;
 }
 
-.form {
-    margin-left: 2vw;
-    margin-right: 2vw;
+.contact-form-container {
+    margin: 0 10vw;
 }
 
 .contact-fieldset {
     border: none;
-    display: flex;
-    flex-direction: row nowrap;
-    column-gap: 1vw;
     background-color: rgba(245, 245, 245, 0);
 }
 
-.contact-fieldset legend {
+.form-group {
     margin-bottom: 1vh;
 }
 
-.contact-p {
-    display: flex;
-    flex-flow: column nowrap;
-    gap: 2px;
-    margin-bottom: 1vh;
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
 }
 
-.contact-p input,
-.contact-p textarea {
+.form-group input,
+.form-group textarea {
     padding: 10px;
     border: 1px solid var(--DARK-GREY);
     border-radius: 10px;
+    width: 100%;
 }
 
-.contact-fieldset .half {
-    width: 50%;
-}
-
-.contact-required {
+.form-required {
     color: var(--NAVY-BLUE-FD);
     font-size: 0.75rem;
 }
@@ -1103,14 +1094,6 @@ p {
     .contact-form h2 {
         font-size: 1.75rem;
     }
-
-    .contact-fieldset {
-        display: block;
-    }
-
-    .contact-fieldset .half {
-        width: 100%;
-    }
     
     .contact-button {
         padding: 12px 18px;
@@ -1247,18 +1230,6 @@ p {
     .about-text h2,
     .contact-form h2 {
         font-size: 1.75rem;
-    }
-
-    .contact-text-container { 
-        font-size: inherit;
-    } 
-
-    .contact-text-container p { 
-        line-height: inherit;
-    }
-
-    .contact-p {
-        font-size: 0.875rem;
     }
 
     .contact-button {
