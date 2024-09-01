@@ -1,3 +1,7 @@
+window.addEventListener('scroll', function() {
+    document.documentElement.style.fontSize = '1rem';
+});
+
 const year = document.getElementById("year")
 const thisYear = new Date().getFullYear()
 year.setAttribute("datetime", thisYear)
