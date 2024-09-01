@@ -1218,7 +1218,7 @@ p {
     }
 }
 
-@media screen and (max-width: 1024px) and (orientation: landscape) {
+@media screen and (device-pixel-ratio: 2) and (max-width: 1024px) and (orientation: landscape) {
 
     :root {
         --MAIN-GAP: 2vh;
@@ -1286,12 +1286,11 @@ p {
 
     .phd-description p {
         margin: 0;
-        font-size: 14px;
+        line-height: 1.25;
     }
 
     .phd-description ul {
         margin: 3px 0 0 10vw;
-        font-size: 14px;
     }
 
     .phd-description ul li {
