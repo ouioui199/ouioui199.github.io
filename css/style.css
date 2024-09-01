@@ -357,8 +357,19 @@ p {
 }
 
 .cv-section p {
-    font-size: 2rem;
+    font-size: 1.875rem;
     font-weight: 300;
+}
+
+.cv-section a {
+    font-size: 1.125rem;
+    font-weight: 300;
+    color: var(--WSM);
+}
+
+.cv-section a:hover,
+.cv-section a:visited:hover {
+    color: var(--DARK-GREY);
 }
 
 .phd {
@@ -982,6 +993,10 @@ p {
     .cv-section p {
         font-size: 1.25rem;
     }
+    
+    .cv-section a {
+        font-size: 1rem;
+    }
 
     .phd h2, 
     .exp h2,
@@ -1142,6 +1157,10 @@ p {
 
     .cv-section p {
         font-size: 1rem;
+    }
+    
+    .cv-section a {
+        font-size: 0.875rem;
     }
 
     .phd h2, 
