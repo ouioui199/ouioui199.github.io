@@ -324,7 +324,16 @@ p {
 }
 
 .language-switcher a {
+    color: var(--DARK-GREY);
+    text-decoration: none;
+}
+
+.language-switcher a.active {
     color: var(--WSM)
+}
+
+.language-switcher a:hover {
+    text-decoration: underline;
 }
 
 /* || CV */

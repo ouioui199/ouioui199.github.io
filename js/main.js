@@ -7,7 +7,7 @@ const windowPathname = window.location.pathname;
 const navLinks = document.querySelectorAll('nav a')
 navLinks.forEach(navLink => {
     const navLinkPathname = new URL(navLink.href).pathname
-    if ((windowPathname === navLinkPathname) || (windowPathname === '/index.html' && navLinkPathname === '/')) {
+    if ((windowPathname === navLinkPathname) || (((windowPathname === '/en/') || (windowPathname === '/fr/')) && navLinkPathname === '/')) {
         navLink.classList.add('active');
     }
 })
@@ -15,34 +15,21 @@ navLinks.forEach(navLink => {
 const hamburger = document.querySelector('.hamburger')
 const navBar = document.querySelector('.nav-bar')
 const body = document.body
-hamburger.onclick =  function () {
+hamburger.onclick = function () {
     hamburger.classList.toggle('active')
     navBar.classList.toggle('active')
     body.classList.toggle('nav-bar-active')
 }
+    
+// Get the language switcher links
+const enLink = document.querySelector('.language-switcher a[href="/en/"]');
+const frLink = document.querySelector('.language-switcher a[href="/fr/"]');
 
-    // document.querySelectorAll('a[href^="#about"]').forEach(anchor => {
-    //     anchor.addEventListener('click', function (e) {
-    //         e.preventDefault()
-            
-    //         // Get the target element
-    //         const targetId = this.getAttribute('href').substring(1)
-    //         const targetElement = document.getElementById(targetId)
-
-    //         if (targetElement) {
-    //             // Calculate the offset from the top of the document
-    //             const headerOffset = document.querySelector('.header').offsetHeight
-    //             const elementPosition = targetElement.getBoundingClientRect().top
-    //             const offsetPosition = elementPosition + window.pageYOffset - headerOffset
-
-    //             // Smooth scroll to the target element
-    //             window.scrollTo({
-    //                 top: offsetPosition,
-    //                 behavior: "smooth"
-    //             })
-    //         }
-    //     })
-    // })
+if (windowPathname.includes('/en/')) {
+    enLink.classList.add('active');
+} else if (windowPathname.includes('/fr/')) {
+    frLink.classList.add('active');
+}
 
 const gallery_photo = document.querySelector('.gallery-photo')
 const images = gallery_photo.querySelectorAll('.grid-item')
