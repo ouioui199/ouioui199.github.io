@@ -582,7 +582,7 @@ p {
 .edu-timeline ol li div {
     position: absolute;
     left: calc(100% + 7px);
-    width: 350px;
+    width: 360px;
     padding: 15px;
     font-size: 1.125rem;
     white-space: normal;
