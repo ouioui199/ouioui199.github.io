@@ -22,8 +22,8 @@ hamburger.onclick = function () {
 }
     
 // Get the language switcher links
-const enLink = document.querySelector('.language-switcher a[href="/en/"]');
-const frLink = document.querySelector('.language-switcher a[href="/fr/"]');
+const enLink = document.getElementById("eng-page")
+const frLink = document.getElementById("fr-page")
 
 if (windowPathname.includes('/en/')) {
     enLink.classList.add('active');
