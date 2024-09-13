@@ -747,7 +747,7 @@ p {
     display: none;
 }
 
-/* || PUBLICATIONS */
+/* || BLOG */
 .blog {
     flex-flow: row;
     margin: var(--MAIN-GAP) var(--MAIN-LRMARGIN);
@@ -756,11 +756,13 @@ p {
     min-height: 100vh;
 }
 
+.contact-text-container p a,
 .blog p a,
 .blog figure a {
     color: var(--NAVY-BLUE-FD);
 }
 
+.contact-text-container p a:hover,
 .blog p a:hover,
 .blog figure a:hover {
     color: var(--NAVY-BLUE);
