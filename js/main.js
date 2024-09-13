@@ -4,10 +4,10 @@ year.setAttribute("datetime", thisYear)
 year.textContent = thisYear
 
 const windowPathname = window.location.pathname;
-const navLinks = document.querySelectorAll('nav a')
+const navLinks = document.querySelectorAll('.nav-bar a')
 navLinks.forEach(navLink => {
     const navLinkPathname = new URL(navLink.href).pathname
-    if ((windowPathname === navLinkPathname) || (((windowPathname === '/en/') || (windowPathname === '/fr/')) && navLinkPathname === '/')) {
+    if ((windowPathname === navLinkPathname) || (((windowPathname === '/en/') || (windowPathname === '/fr/')) && navLinkPathname === '/')  || ((windowPathname.includes('articles')) && (navLinkPathname === '/blog/'))) {
         navLink.classList.add('active');
     }
 })
