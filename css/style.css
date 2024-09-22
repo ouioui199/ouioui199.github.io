@@ -823,6 +823,10 @@ p {
     text-align: justify;
 }
 
+.ai-cv-blog p.left-aligned {
+    align-self: flex-start;
+}
+
 .ai-cv-blog ul {
     list-style-type: disc;
     margin: 0 5vw;
@@ -843,6 +847,34 @@ p {
     flex-flow: column;
     align-items: center;
     gap: 1rem;
+}
+
+.video-player,
+.youtube-video-player {
+    width: 75%;
+    min-height: 400px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.youtube-video-player {
+    min-height: 450px;
+    gap: 1rem;
+}
+
+.video-player .caption,
+.youtube-video-player .caption {
+    text-align: center;
+}
+
+.ai-cv-blog #list-cv-research-branches {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ai-cv-blog #list-cv-research-branches ul {
+    margin-right: 0;
 }
 
 .blog-page-end-nav-container {
