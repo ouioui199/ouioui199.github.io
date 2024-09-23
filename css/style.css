@@ -19,6 +19,7 @@ img {
     --FF: 'Lato', sans-serif;
     --HEADER-FW: 600;
     --HR-RULE-HEIGHT: 2px;
+    --BLOG-FS: 1rem;
 
     /* COLORS */
     --WSM: whitesmoke;
@@ -752,7 +753,7 @@ p {
     flex-flow: row;
     margin: var(--MAIN-GAP) var(--MAIN-LRMARGIN);
     gap: 2vw;
-    font-size: 1rem;
+    font-size: var(--BLOG-FS);
     min-height: 100vh;
 }
 
@@ -787,16 +788,20 @@ p {
     color: var(--NAVY-BLUE-FD);
 }
 
+.ai-cv-menu nav li a:hover,
+.ai-cv-menu nav li a.active {
+    color: var(--NAVY-BLUE);
+}
+
 .ai-cv-menu nav li a:hover {
     text-decoration: underline;
-    color: var(--NAVY-BLUE);
 }
 
 .ai-cv-blog,
 .photography-blog {
     display: flex;
     flex-flow: column nowrap;
-    gap: 1rem;
+    gap: var(--BLOG-FS);
     align-items: center;
 }
 
@@ -834,7 +839,7 @@ p {
 }
 
 .ai-cv-blog ul li {
-    margin-bottom: 10px;
+    line-height: 1.6;
 }
 
 .ai-cv-blog ul li:last-child {
@@ -852,15 +857,19 @@ p {
 .video-player,
 .youtube-video-player {
     width: 75%;
-    min-height: 400px;
     display: flex;
     flex-flow: column;
     align-items: center;
+    height: 0;
+    gap: 1rem;
+}
+
+.video-player {
+    min-height: 400px;
 }
 
 .youtube-video-player {
     min-height: 450px;
-    gap: 1rem;
 }
 
 .video-player .caption,
@@ -875,6 +884,7 @@ p {
 
 .ai-cv-blog #list-cv-research-branches ul {
     margin-right: 0;
+    text-align: left;
 }
 
 .blog-page-end-nav-container {
@@ -918,7 +928,7 @@ p {
 
 .blog-page-end-divider {
     border-left: 1px solid var(--NAVY-BLUE-FD);
-    height: 2rem;
+    height: calc(2 * var(--BLOG-FS));
 }
 
 .blog-page-end-nav-item-left {
@@ -931,11 +941,11 @@ p {
 }
 
 .blog-page-end-nav-item-left svg {
-    margin-right: 1rem;
+    margin-right: var(--BLOG-FS);
 }
 
 .blog-page-end-nav-item-right svg {
-    margin-left: 1rem;
+    margin-left: var(--BLOG-FS);
 }
 
 /* || MEDIA */
@@ -1027,11 +1037,25 @@ p {
         margin: 0;
         gap: 5px;
     }
+
+    .ai-cv-menu,
+    .ai-cv-links {
+        display: none;
+    }
+
+    .video-player {
+        min-height: 350px;
+    }
+    
+    .youtube-video-player {
+        min-height: 400px;
+    }
 }
 
 @media screen and (max-width: 769px) and (orientation: portrait)  {
 
     :root {
+        --BLOG-FS: 0.875rem;
         --MAIN-GAP: 1.75vh;
         --HR-RULE-HEIGHT: 1.5px;
     }
@@ -1173,8 +1197,12 @@ p {
     .edu h2,
     .gallery-header h2,
     .publications-and-conferences h2,
-    .blog h2 {
+    .ai-cv-blog h2 {
         font-size: 1.75rem;
+    }
+
+    .ai-cv-blog h3 {
+        font-size: 1.375rem;
     }
     
     .exp-timeline {
@@ -1256,6 +1284,23 @@ p {
     .gallery-header ul {
         font-size: 1rem;
     }
+
+    .ai-cv-blog #list-cv-research-branches ul li {
+        line-height: 1.5;
+    }
+
+    .video-player {
+        min-height: 305px;
+    }
+    
+    .youtube-video-player {
+        min-height: 350px;
+    }
+
+    .blog-page-end-nav-item svg {
+        width: 1.375rem;
+        height: 1.375rem;
+    }
 }
 
 @media screen and (max-width: 481px) and (orientation: portrait) {
@@ -1265,6 +1310,7 @@ p {
     }
 
     :root {
+        --BLOG-FS: 0.75rem;
         --MAIN-GAP: 1.5vh;
         --HEADER-LRPADDING: 12vw;
         --HEADER-TBPADDING: 2vh;
@@ -1338,8 +1384,13 @@ p {
     .edu h2,
     .gallery-header h2,
     .publications-and-conferences h2,
-    .blog h2 {
+    .ai-cv-blog h2 {
         font-size: 1.5rem;
+    }
+
+    .timeline-component h3,
+    .ai-cv-blog h3 {
+        font-size: 1.125rem;
     }
 
     .phd .logo--container {
@@ -1357,10 +1408,6 @@ p {
 
     .timeline-component {
         margin: 10px;
-    }
-
-    .timeline-component h3 {
-        font-size: 1.125rem;
     }
 
     .timeline-component h4 {
@@ -1423,17 +1470,39 @@ p {
         margin: 0;
         gap: 3px;
     }
+
+    .ai-cv-blog #list-cv-research-branches ul li {
+        line-height: 1.45;
+    }
+
+    .video-player {
+        min-height: 180px;
+    }
+    
+    .youtube-video-player {
+        min-height: 225px;
+    }
+
+    .blog-page-end-nav-desc {
+        display: none;
+    }
+
+    .blog-page-end-nav-item svg {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
 }
 
 @media screen and (max-width: 1024px) and (orientation: landscape) {
 
     :root {
+        --BLOG-FS: 0.875rem;
         --MAIN-GAP: 2vh;
         --HR-RULE-HEIGHT: 1px;
     }
 
     html {
-        font-size: 0.875rem;
+        font-size: 1rem;
     }
 
     p {
@@ -1480,8 +1549,13 @@ p {
     .edu h2,
     .gallery-header h2,
     .publications-and-conferences h2,
-    .blog h2 {
+    .ai-cv-blog h2 {
         font-size: 1.5rem;
+    }
+
+    .timeline-component h3,
+    .ai-cv-blog h3 {
+        font-size: 1.125rem;
     }
 
     .phd-description {
@@ -1508,10 +1582,6 @@ p {
 
     .timeline-component {
         margin: 10px;
-    }
-
-    .timeline-component h3 {
-        font-size: 1.125rem;
     }
 
     .timeline-component h4 {
@@ -1570,5 +1640,17 @@ p {
 
     .gallery-grid {
         gap: 4px;
+    }
+
+    .ai-cv-blog #list-cv-research-branches ul li {
+        line-height: 1.45;
+    }
+
+    .video-player {
+        min-height: 275px;
+    }
+    
+    .youtube-video-player {
+        min-height: 300px;
     }
 }
