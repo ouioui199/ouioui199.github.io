@@ -31,6 +31,13 @@ if (windowPathname.includes('/en/')) {
     frLink.classList.add('active');
 }
 
+const blogMenus = document.querySelectorAll('.blog .ai-cv-menu nav li a')
+blogMenus.forEach(blogMenu => {
+    if (blogMenu.attributes.href.textContent === windowPathname.substring(windowPathname.lastIndexOf('/') + 1)) {
+        blogMenu.classList.add('active')
+    }
+})
+
 const gallery_photo = document.querySelector('.gallery-photo')
 const images = gallery_photo.querySelectorAll('.grid-item')
 const gallery_header = document.querySelectorAll('.gallery-header ul li')
@@ -55,3 +62,4 @@ const gallery_filter = e => {
 gallery_header.forEach(option => {
     option.onclick = gallery_filter
 })
+
