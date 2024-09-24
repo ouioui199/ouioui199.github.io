@@ -8,6 +8,11 @@
         <link rel="icon" href="../../images/img0.png" type="image/png">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <script src="../../js/main.js" defer></script>
+
+        <!-- <link rel="stylesheet" href="../../css/prism-line-numbers.css"> -->
+        <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.css" rel="stylesheet" /> -->
+         <link rel="stylesheet" href="../../css/prism.css">
+        <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css"> -->
     </head>
     <body>
         <header class="header">
@@ -54,11 +59,35 @@
                         Developed by Meta’s <a href="https://ai.meta.com/research/">Fundamental AI Research</a> (FAIR) lab, <a href="https://pytorch.org/">PyTorch</a> has become the most widely used deep learning framework. Its <a href="https://github.com/pytorch/pytorch">GitHub repository</a> boasts over 82,400 stars and more than 22,000 forks, showcasing its immense popularity. Backed by a large and active community, PyTorch offers extensive support through its vibrant <a href="https://discuss.pytorch.org/">discussion forums</a>, enabling users to quickly resolve issues and streamline debugging. Major tech companies, including Apple, Meta, and TikTok, leverage PyTorch for their machine learning projects. Its growing popularity is also fueled by platforms like <a href="https://lightning.ai/">PyTorch Lightning</a> and <a href="https://huggingface.co/">Hugging Face</a>, which simplify code organization and provide access to state-of-the-art models, making it easier than ever for users to harness its power.
                     </p>
 
-                    <p>
+                    <p class="left-aligned">
                         So let’s dive in and discover what Pytorch has to offer !
                     </p>
 
+                    <p class="left-aligned">
+                        Note that this article is based on <a href="https://pytorch.org/tutorials/beginner/basics/tensorqs_tutorial.html">this Pytorch tutorial</a>. I have summarized and added some more spices of my knowledge.
+                    </p>
+
                     <h3>Tensors</h3>
+
+                    <p>
+                        Tensors are multi-dimensional data similar to matrices in <a href="https://numpy.org/">numpy</a>, but with additional attributes that enable parallel computing to accelerate calculations. 
+                    </p>
+
+                    <div class="code-box2 left-aligned">
+                        <pre class="line-numbers"><code class="language-python">import torch
+
+x_ones = torch.ones_like(x_data)
+print(f"Ones Tensor: \n {x_ones} \n")
+                    
+x_rand = torch.rand_like(x_data, dtype=torch.float)
+print(f"Random Tensor: \n {x_rand} \n")</code></pre>
+                    </div>
+
+                    <h3>Link with NumPy arrays</h3>
+
+                    <p>
+                        Tensors and <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html">Numpy's ndarrays</a> are pretty much the same. They often share the same underlying memory on CPU, allow users to transfer data from one to another without having the need of creating new variables.
+                    </p>
 
                     <hr>
 
@@ -108,5 +137,29 @@
                 </div>
             </div>
         </footer>
+
+        <script src="../../js/prism.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script> -->
+        <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script> -->
+        <!-- <script>hljs.highlightAll();</script> -->
+        <!-- <script>
+            // Get the code block
+            var codeBlock = document.querySelector('.code-box2');
+        
+            // Get the text content, trim leading spaces or newlines
+            codeBlock.innerHTML = codeBlock.innerHTML.trim();
+        </script> -->
+        <!-- <script>
+            var pre= document.querySelector('pre');
+
+            //insert a span in front of the first letter.  (the span will automatically close.)
+            pre.innerHTML= pre.textContent.replace(/(\w)/, '<span>$1');
+
+            //get the new span's left offset:
+            var left= pre.querySelector('span').getClientRects()[0].left;
+
+            //move the code to the left, taking into account the body's margin:
+            pre.style.marginLeft= (-left + pre.getClientRects()[0].left)+'px';
+        </script> -->
     </body>
 </html>

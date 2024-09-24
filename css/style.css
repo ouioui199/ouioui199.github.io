@@ -828,7 +828,8 @@ p {
     text-align: justify;
 }
 
-.ai-cv-blog p.left-aligned {
+.ai-cv-blog p.left-aligned,
+.ai-cv-blog div.left-aligned  {
     align-self: flex-start;
 }
 
@@ -946,6 +947,19 @@ p {
 
 .blog-page-end-nav-item-right svg {
     margin-left: var(--BLOG-FS);
+}
+
+code {
+    display: block;
+    padding-left: 0;
+    text-align: left;
+    white-space: pre-wrap;
+    width: 47.6vw;
+}
+
+pre {
+    width: 100%;
+    overflow-x: auto;
 }
 
 /* || MEDIA */
