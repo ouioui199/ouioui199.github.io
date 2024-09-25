@@ -10,6 +10,8 @@ https://prismjs.com/download.html#themes=prism&languages=python&plugins=line-num
 	--NAVY-BLUE: #051650;
     --NAVY-BLUE-FD: #05165090;
 	--LIGHT-GREY: #ddd;
+	--TEAL: #499d99;
+	--LIGHT-BORDEAUX: #a40638;
 }
 
 code[class*="language-"],
@@ -82,7 +84,7 @@ pre[class*="language-"] {
 }
 
 .token.punctuation {
-	color: #999;
+	color: var(--NAVY-BLUE-FD);
 }
 
 .token.namespace {
@@ -96,7 +98,7 @@ pre[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: #905;
+	color: var(--TEAL);
 }
 
 .token.selector,
@@ -113,7 +115,7 @@ pre[class*="language-"] {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-	color: #9a6e3a;
+	color: var(--NAVY-BLUE-FD);
 	/* This background color was intended by the author of this theme. */
 	/* background: hsla(0, 0%, 100%, .5); */
 }
@@ -121,7 +123,7 @@ pre[class*="language-"] {
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-	color: #5f021f;
+	color: var(--LIGHT-BORDEAUX);
 }
 
 .token.function,
