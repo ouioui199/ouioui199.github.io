@@ -859,6 +859,10 @@ p {
     gap: 1rem;
 }
 
+.ai-cv-blog figure figcaption {
+    text-align: center;
+}
+
 .video-player,
 .youtube-video-player {
     width: 75%;
@@ -1517,6 +1521,13 @@ pre {
 
     code {
         width: calc(100vw - var(--MAIN-LRMARGIN) * 2 - 2rem);
+    }
+}
+
+@media screen and (max-width: 481px) and (orientation: portrait) {
+
+    .video-player {
+        min-height: 200px;
     }
 }
 
