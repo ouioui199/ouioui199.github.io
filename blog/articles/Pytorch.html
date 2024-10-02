@@ -7,12 +7,9 @@
         <link rel="stylesheet" href="../../css/style.css">
         <link rel="icon" href="../../images/img0.png" type="image/png">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../../css/prism.css">
         <script src="../../js/main.js" defer></script>
-
-        <!-- <link rel="stylesheet" href="../../css/prism-line-numbers.css"> -->
-        <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.css" rel="stylesheet" /> -->
-         <link rel="stylesheet" href="../../css/prism.css">
-        <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css"> -->
+        <script src="../../js/prism.js" defer></script>
     </head>
     <body>
         <header class="header">
@@ -73,14 +70,261 @@
                         Tensors are multi-dimensional data similar to matrices in <a href="https://numpy.org/">numpy</a>, but with additional attributes that enable parallel computing to accelerate calculations. 
                     </p>
 
-                    <div class="code-box2 left-aligned">
-                        <pre class="line-numbers"><code class="language-python">import torch
+                    <p class="left-aligned">
+                        First, let's import necessary librairies:
+                    </p>
 
-x_ones = torch.ones_like(x_data)
-print(f"Ones Tensor: \n {x_ones} \n")
-                    
-x_rand = torch.rand_like(x_data, dtype=torch.float)
-print(f"Random Tensor: \n {x_rand} \n")</code></pre>
+                    <div class="left-aligned">
+                        <pre class="line-numbers"><code class="language-python">import torch
+import numpy as np</code></pre>
+                    </div>
+
+                    <p class="left-aligned">
+                        Tensors can be created in various ways. For example, we can create one directly from a list or a nested list:
+                    </p>
+
+                    <div class="left-aligned">
+                        <pre class="line-numbers"><code class="language-python">data = [[1, 2], [3, 4]]
+data_tensor = torch.tensor(data)</code></pre>
+                    </div>
+
+                    <p class="left-aligned">
+                        From a numpy array:
+                    </p>
+
+                    <div class="left-aligned">
+                        <pre class="line-numbers"><code class="language-python">data_array = np.array(data)
+data_array_tensor = torch.from_numpy(data_array)</code></pre>
+                    </div>
+
+                    <p class="left-aligned">
+                        From another tensor:
+                    </p>
+
+                    <div class="left-aligned">
+                        <pre class="line-numbers"><code class="language-python">ones_tensor = torch.ones_like(data_tensor)
+random_tensor = torch.rand_like(data_tensor, dtype=torch.float)
+
+print(f"Ones tensor: \n{ones_tensor}")
+print(f"Random tensor: \n{random_tensor}")</code></pre>
+                    </div>
+
+                    <div class="left-aligned">
+                        <pre class="line-numbers"><code class="language-python">Ones tensor: 
+tensor([[1, 1],
+        [1, 1]])
+
+Random tensor:
+tensor([[0.2302, 0.7488],
+        [0.0755, 0.3460]])</code></pre>
+                    </div>
+
+                    <p class="left-aligned">
+                        With random or constant values:
+                    </p>
+
+                    <div class="left-aligned">
+                        <pre class="line-numbers"><code class="language-python">shape = (2, 4,)
+random_normal_tensor = torch.randn(shape)
+new_ones_tensor = ones_tensor.new_ones(shape, dtype=torch.double)
+empty_tensor = torch.empty(shape)
+
+print(f"Random normal tensor: \n{random_normal_tensor}")
+print(f"New ones tensor: \n{new_ones_tensor}")
+print(f"Empty tensor: \n{empty_tensor}")</code></pre>
+                    </div>
+
+                    <div class="left-aligned">
+                        <pre class="line-numbers"><code class="language-python">Random normal tensor:
+tensor([[ 0.5631, -0.0305, -1.2209, -0.8312],
+        [ 0.6690, -0.6183,  0.3573, -0.4407]])
+
+New ones tensor:
+tensor([[1., 1., 1., 1.],
+        [1., 1., 1., 1.]], dtype=torch.float64)
+    
+Empty tensor:
+tensor([[0., 0., 0., 0.],
+        [0., 0., 0., 0.]])</code></pre>
+                    </div>
+
+                    <h3>Attributes</h3>
+
+                    <div class="left-aligned">
+                        <pre class="line-numbers"><code class="language-python">tensor = torch.rand(4, 7)
+
+print(f"Shape of tensor: {tensor.shape}")
+print(f"Size of tensor: {tensor.size()}")
+print(f"Datatype of tensor: {tensor.dtype}")
+print(f"Type of tensor: {type(tensor)}")
+print(f"Device tensor is stored on: {tensor.device}")</code></pre>
+                    </div>
+
+                    <div class="left-aligned">
+                        <pre class="line-numbers"><code class="language-python">Shape of tensor: torch.Size([4, 7])
+Size of tensor: torch.Size([4, 7])
+Datatype of tensor: torch.float32
+Type of tensor: &lt;class 'torch.Tensor'>
+Device tensor is stored on: cpu</code></pre>
+                    </div>
+
+                    <h3>Operations</h3>
+
+                    <p>
+                        There are over 100 tensor operations, for example transposing, indexing, slicing, mathematical operations, linear algebra. They are available <a href="https://pytorch.org/docs/stable/torch.html">here</a>.
+                    </p>
+
+                    <p class="left-aligned">
+                        Addition two tensors, element-wise
+                    </p>
+
+                    <div class="left-aligned">
+                        <pre class="line-numbers"><code class="language-python">x = torch.randn(3, 3)
+y = torch.ones(3, 3)
+
+print(f"x: \n{x}")
+print(f"y: \n{y}")
+print(f"1. x + y: \n{x + y}")
+print(f"2. x + y: \n{torch.add(x, y)}")
+print(f"3. x + y: \n{x.add(y)}")</code></pre>
+                    </div>
+
+                    <div class="left-aligned">
+                        <pre class="line-numbers"><code class="language-python">x:
+tensor([[ 0.4901,  0.3201, -0.1917],
+        [ 0.2385,  1.0622,  1.7395],
+        [ 1.4905,  0.3360, -0.0343]])
+
+y:
+tensor([[1., 1., 1.],
+        [1., 1., 1.],
+        [1., 1., 1.]])
+
+1. x + y: 
+tensor([[1.4901, 1.3201, 0.8083],
+        [1.2385, 2.0622, 2.7395],
+        [2.4905, 1.3360, 0.9657]])
+    
+2. x + y: 
+tensor([[1.4901, 1.3201, 0.8083],
+        [1.2385, 2.0622, 2.7395],
+        [2.4905, 1.3360, 0.9657]])
+    
+3. x + y: 
+tensor([[1.4901, 1.3201, 0.8083],
+        [1.2385, 2.0622, 2.7395],
+        [2.4905, 1.3360, 0.9657]])</code></pre>
+                    </div>
+
+                    <p class="left-aligned">
+                        In-place operations
+                    </p>
+
+                    <div class="left-aligned">
+                        <pre class="line-numbers"><code class="language-python">x = torch.randn(3, 3)
+y = torch.ones(3, 3)
+
+print(f"x: \n{x}")
+print(f"In-place addition: \n{x.add_(y)}")
+print(f"x: \n{x}")</code></pre>
+                    </div>
+
+                    <div class="left-aligned">
+                        <pre class="line-numbers"><code class="language-python">x: 
+tensor([[-1.6163, -1.6534, -1.0660],
+        [ 2.2851, -0.5562,  0.0684],
+        [ 1.5171, -0.8063,  1.4790]])
+
+In-place addition: 
+tensor([[-0.6163, -0.6534, -0.0660],
+        [ 3.2851,  0.4438,  1.0684],
+        [ 2.5171,  0.1937,  2.4790]])
+
+x: 
+tensor([[-0.6163, -0.6534, -0.0660],
+        [ 3.2851,  0.4438,  1.0684],
+        [ 2.5171,  0.1937,  2.4790]])</code></pre>
+                    </div>
+
+                    <p class="left-aligned">
+                        Tensors can be indexed and sliced like numpy arrays or lists.
+                    </p>
+
+                    <div class="left-aligned">
+                        <pre class="line-numbers"><code class="language-python">x = torch.ones(4, 4)
+print(f"2nd column of x: \n{x[:, 1]}")
+
+x[:, 1] = 0
+print(f"x: \n{x}")</code></pre>
+                    </div>
+
+                    <div class="left-aligned">
+                        <pre class="line-numbers"><code class="language-python">2nd column of x: 
+tensor([1., 1., 1., 1.])
+
+x: 
+tensor([[1., 0., 1., 1.],
+        [1., 0., 1., 1.],
+        [1., 0., 1., 1.],
+        [1., 0., 1., 1.]])</code></pre>
+                    </div>
+
+                    <p class="left-aligned">
+                        To join 2 tensors, use <strong>torch.cat</strong> or <strong>torch.stack</strong>
+                    </p>
+
+                    <div class="left-aligned">
+                        <pre class="line-numbers"><code class="language-python">print(f"Concatenating 2 tensors along 1st dimension: \n{torch.cat([x, x], dim=1)}")</code></pre>
+                    </div>
+
+                    <div class="left-aligned">
+                        <pre class="line-numbers"><code class="language-python">Concatenating 2 tensors along 1st dimension: 
+tensor([[1., 0., 1., 1., 1., 0., 1., 1.],
+        [1., 0., 1., 1., 1., 0., 1., 1.],
+        [1., 0., 1., 1., 1., 0., 1., 1.],
+        [1., 0., 1., 1., 1., 0., 1., 1.]])</code></pre>
+                    </div>
+
+                    <p class="left-aligned">
+                        Tensors can be run on GPU. Parallel computing allows faster operations than on CPU.
+                    </p>
+
+                    <div class="left-aligned">
+                        <pre class="line-numbers"><code class="language-python"># Check availability of gpu devices
+if torch.cuda.is_available():
+    x = x.to('cuda')</code></pre>
+                    </div>
+
+                    <p class="left-aligned">
+                        Note that macOS does not natively support NVIDIA GOUs with CUDA. Latest Apple Silicon devices use Metal for GPU acceleration, which is supported by Pytorch, but only in specific version.
+                    </p>
+
+                    <div class="left-aligned">
+                        <pre class="line-numbers"><code class="language-python"># Check availability of gpu devices
+if torch.cuda.is_available():
+    x = x.to('cuda')</code></pre>
+                    </div>
+
+                    <div class="left-aligned">
+                        <pre class="line-numbers"><code class="language-python">tensor = torch.randn(3, 3)
+
+print(f"CUDA is available: {torch.cuda.is_available()}")
+print(f"MPS is available: {torch.backends.mps.is_available()}")
+
+if torch.backends.mps.is_available():
+    mps_device = torch.device('mps')
+    tensor = tensor.to(mps_device)
+    print(f"MPS device tensor: \n{tensor}")</code></pre>
+                    </div>
+
+                    <div class="left-aligned">
+                        <pre class="line-numbers"><code class="language-python">CUDA is available: False
+MPS is available: True
+
+MPS device tensor: 
+tensor([[ 1.9530,  0.2365,  0.0942],
+        [ 2.0012,  0.1181,  1.2998],
+        [-0.6547, -0.0198,  0.4644]], device='mps:0')</code></pre>
                     </div>
 
                     <h3>Link with NumPy arrays</h3>
@@ -89,10 +333,67 @@ print(f"Random Tensor: \n {x_rand} \n")</code></pre>
                         Tensors and <a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html">Numpy's ndarrays</a> are pretty much the same. They often share the same underlying memory on CPU, allow users to transfer data from one to another without having the need of creating new variables.
                     </p>
 
+                    <div class="left-aligned">
+                        <pre class="line-numbers"><code class="language-python">a = torch.ones(5)
+print(f"a: \n{a}")
+print(f"a is {type(a)}")
+
+b = a.numpy()
+print(f"b is {type(b)}")</code></pre>
+                    </div>
+
+                    <div class="left-aligned">
+                        <pre class="line-numbers"><code class="language-python">a: 
+tensor([1., 1., 1., 1., 1.])
+a is &lt;class 'torch.Tensor'>
+b is &lt;class 'numpy.ndarray'></code></pre>
+                    </div>
+
+                    <p>
+                        This prouves that torch tensor and numpy array share the same underlying memory on CPU. Any operation on a will change b on the same manner, and vice-versa.
+                    </p>
+
+                    <div class="left-aligned">
+                        <pre class="line-numbers"><code class="language-python">a.add_(1)
+print(f"a: \n{a}")
+print(f"b: \n{b}")</code></pre>
+                    </div>
+
+                    <div class="left-aligned">
+                        <pre class="line-numbers"><code class="language-python">a: 
+tensor([2., 2., 2., 2., 2.])
+
+b: 
+[2. 2. 2. 2. 2.]</code></pre>
+                    </div>
+
+                    <p class="left-aligned">
+                        To convert numpy array to tensors:
+                    </p>
+
+                    <div class="left-aligned">
+                        <pre class="line-numbers"><code class="language-python">a = np.ones(5)
+b = torch.from_numpy(a)
+
+print(f"a: \n{a}")
+print(f"b: \n{b}")
+print(type(a))
+print(type(b))</code></pre>
+                    </div>
+
+                    <div class="left-aligned">
+                        <pre class="line-numbers"><code class="language-python">a: 
+[1. 1. 1. 1. 1.]
+b: 
+tensor([1., 1., 1., 1., 1.], dtype=torch.float64)
+&lt;class 'numpy.ndarray'>
+&lt;class 'torch.Tensor'></code></pre>
+                    </div>
+
                     <hr>
 
                     <div class="blog-page-end-nav-container">
-                        <a href="ArtificialNeuralNets.html" class="blog-page-end-nav-item blog-page-end-nav-item-left">
+                        <a href="ComputerVision.html" class="blog-page-end-nav-item blog-page-end-nav-item-left">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                             </svg>
@@ -104,7 +405,7 @@ print(f"Random Tensor: \n {x_rand} \n")</code></pre>
                 
                         <div class="blog-page-end-divider"></div>
                 
-                        <a href="next-article.html" class="blog-page-end-nav-item blog-page-end-nav-item-right">
+                        <a href="ArtificialNeuralNets.html" class="blog-page-end-nav-item blog-page-end-nav-item-right">
                             <div>
                                 <span class="blog-page-end-nav-title">Next Article</span>
                                 <span class="blog-page-end-nav-desc">Artificial Neural Networks</span>
@@ -137,29 +438,5 @@ print(f"Random Tensor: \n {x_rand} \n")</code></pre>
                 </div>
             </div>
         </footer>
-
-        <script src="../../js/prism.js"></script>
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script> -->
-        <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script> -->
-        <!-- <script>hljs.highlightAll();</script> -->
-        <!-- <script>
-            // Get the code block
-            var codeBlock = document.querySelector('.code-box2');
-        
-            // Get the text content, trim leading spaces or newlines
-            codeBlock.innerHTML = codeBlock.innerHTML.trim();
-        </script> -->
-        <!-- <script>
-            var pre= document.querySelector('pre');
-
-            //insert a span in front of the first letter.  (the span will automatically close.)
-            pre.innerHTML= pre.textContent.replace(/(\w)/, '<span>$1');
-
-            //get the new span's left offset:
-            var left= pre.querySelector('span').getClientRects()[0].left;
-
-            //move the code to the left, taking into account the body's margin:
-            pre.style.marginLeft= (-left + pre.getClientRects()[0].left)+'px';
-        </script> -->
     </body>
 </html>
