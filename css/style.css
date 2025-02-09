@@ -631,31 +631,57 @@ p {
 }
 
 /* || PUBLICATIONS */
-.publications-and-conferences {
+.publications-conferences-communications {
     flex-flow: column nowrap;
     height: 100vh;
     margin: var(--MAIN-GAP) var(--MAIN-LRMARGIN);
     gap: var(--MAIN-GAP)
 }
 
-.publications,
-.conferences {
-    display: flex;
-    flex-flow: column nowrap;
-    gap: var(--MAIN-GAP);
-    justify-content: center;
-    align-items: center;
-}
-
-.publications-and-conferences h2 {
-    font-size: 2rem;
-}
-
-.publications-and-conferences hr {
+.publications-conferences-communications div,
+.publications-conferences-communications ul {
+    text-align: left;
     width: 80%;
-    align-self: center;
+    margin: 0 auto;
+}
+
+.publications-conferences-communications section {
+    width: 100%;
+    margin: 0 auto var(--MAIN-GAP);
+}
+
+.publications-conferences-communications h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: var(--MAIN-GAP);
+}
+
+.publications-conferences-communications hr {
+    width: 80%;
     border: none;
     border-top: var(--HR-RULE-HEIGHT) solid var(--NAVY-BLUE);
+    margin: 0 auto var(--MAIN-GAP)
+}
+
+.publications-conferences-communications li {
+    margin-bottom: .25em;
+    list-style-type: disc;
+}
+
+.publications-conferences-communications a[href$=".pdf"] {
+    display: inline-block;
+    padding: .2em .5em;
+    margin-left: .5em;
+    background-color: var(--NAVY-BLUE);
+    color: var(--WSM);
+    text-decoration: none;
+    border-radius: .25em;
+    font-size: calc(1.125rem - .2em);
+}
+
+.publications-conferences-communications a[href$=".pdf"]:hover {
+    background-color: var(--NAVY-BLUE-FD);
+    transition: background-color 0.1s ease;
 }
 
 /* || PHOTOGRAPHY */
@@ -1167,7 +1193,7 @@ pre {
 
     .nav-bar-active .intro-fig,
     .nav-bar-active .cv,
-    .nav-bar-active .publications-and-conferences,
+    .nav-bar-active .publications-conferences-communications,
     .nav-bar-active .photography,
     .nav-bar-active .blog {
         margin-top: calc(var(--HEADER-TBPADDING) * 2 + 2.5rem - 7px + 5.75rem);
@@ -1219,7 +1245,7 @@ pre {
     .exp h2,
     .edu h2,
     .gallery-header h2,
-    .publications-and-conferences h2,
+    .publications-conferences-communications h2,
     .ai-cv-blog h2 {
         font-size: 1.75rem;
     }
@@ -1302,6 +1328,14 @@ pre {
 
     .edu-timeline time {
         font-size: 1.25rem;
+    }
+
+    .publications-conferences-communications li {
+        margin-bottom: .2em;
+    }
+
+    .publications-conferences-communications a[href$=".pdf"] {
+        font-size: calc(1rem - .2em);
     }
 
     .gallery-header ul {
@@ -1406,7 +1440,7 @@ pre {
     .exp h2,
     .edu h2,
     .gallery-header h2,
-    .publications-and-conferences h2,
+    .publications-conferences-communications h2,
     .ai-cv-blog h2 {
         font-size: 1.5rem;
     }
@@ -1483,6 +1517,14 @@ pre {
 
     .edu-timeline time {
         font-size: 1rem;
+    }
+
+    .publications-conferences-communications li {
+        margin-bottom: .2em;
+    }
+
+    .publications-conferences-communications a[href$=".pdf"] {
+        font-size: calc(0.875rem - .2em);
     }
 
     .gallery-header ul {
@@ -1582,7 +1624,7 @@ pre {
     .exp h2,
     .edu h2,
     .gallery-header h2,
-    .publications-and-conferences h2,
+    .publications-conferences-communications h2,
     .ai-cv-blog h2 {
         font-size: 1.5rem;
     }
