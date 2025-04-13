@@ -631,44 +631,44 @@ p {
 }
 
 /* || PUBLICATIONS */
-.publications-conferences-communications {
+.conferences-journals-communications {
     flex-flow: column nowrap;
     height: 100vh;
     margin: var(--MAIN-GAP) var(--MAIN-LRMARGIN);
     gap: var(--MAIN-GAP)
 }
 
-.publications-conferences-communications div,
-.publications-conferences-communications ul {
+.conferences-journals-communications div,
+.conferences-journals-communications ul {
     text-align: left;
-    width: 80%;
+    /* width: 80%; */
     margin: 0 auto;
 }
 
-.publications-conferences-communications section {
+.conferences-journals-communications section {
     width: 100%;
     margin: 0 auto var(--MAIN-GAP);
 }
 
-.publications-conferences-communications h2 {
+.conferences-journals-communications h2 {
     text-align: center;
     font-size: 2rem;
     margin-bottom: var(--MAIN-GAP);
 }
 
-.publications-conferences-communications hr {
+.conferences-journals-communications hr {
     width: 80%;
     border: none;
     border-top: var(--HR-RULE-HEIGHT) solid var(--NAVY-BLUE);
     margin: 0 auto var(--MAIN-GAP)
 }
 
-.publications-conferences-communications li {
+.conferences-journals-communications li {
     margin-bottom: .25em;
     list-style-type: disc;
 }
 
-.publications-conferences-communications a[href$=".pdf"] {
+.conferences-journals-communications a[href$=".pdf"] {
     display: inline-block;
     padding: .2em .5em;
     margin-left: .5em;
@@ -679,7 +679,7 @@ p {
     font-size: calc(1.125rem - .2em);
 }
 
-.publications-conferences-communications a[href$=".pdf"]:hover {
+.conferences-journals-communications a[href$=".pdf"]:hover {
     background-color: var(--NAVY-BLUE-FD);
     transition: background-color 0.1s ease;
 }
@@ -1193,7 +1193,7 @@ pre {
 
     .nav-bar-active .intro-fig,
     .nav-bar-active .cv,
-    .nav-bar-active .publications-conferences-communications,
+    .nav-bar-active .conferences-journals-communications,
     .nav-bar-active .photography,
     .nav-bar-active .blog {
         margin-top: calc(var(--HEADER-TBPADDING) * 2 + 2.5rem - 7px + 5.75rem);
@@ -1245,7 +1245,7 @@ pre {
     .exp h2,
     .edu h2,
     .gallery-header h2,
-    .publications-conferences-communications h2,
+    .conferences-journals-communications h2,
     .ai-cv-blog h2 {
         font-size: 1.75rem;
     }
@@ -1330,11 +1330,11 @@ pre {
         font-size: 1.25rem;
     }
 
-    .publications-conferences-communications li {
+    .conferences-journals-communications li {
         margin-bottom: .2em;
     }
 
-    .publications-conferences-communications a[href$=".pdf"] {
+    .conferences-journals-communications a[href$=".pdf"] {
         font-size: calc(1rem - .2em);
     }
 
@@ -1440,7 +1440,7 @@ pre {
     .exp h2,
     .edu h2,
     .gallery-header h2,
-    .publications-conferences-communications h2,
+    .conferences-journals-communications h2,
     .ai-cv-blog h2 {
         font-size: 1.5rem;
     }
@@ -1519,11 +1519,11 @@ pre {
         font-size: 1rem;
     }
 
-    .publications-conferences-communications li {
+    .conferences-journals-communications li {
         margin-bottom: .2em;
     }
 
-    .publications-conferences-communications a[href$=".pdf"] {
+    .conferences-journals-communications a[href$=".pdf"] {
         font-size: calc(0.875rem - .2em);
     }
 
@@ -1624,7 +1624,7 @@ pre {
     .exp h2,
     .edu h2,
     .gallery-header h2,
-    .publications-conferences-communications h2,
+    .conferences-journals-communications h2,
     .ai-cv-blog h2 {
         font-size: 1.5rem;
     }
