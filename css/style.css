@@ -1012,6 +1012,30 @@ pre {
         flex-direction: column;
     }
 
+    .nav-bar.active ul  {
+        display: flex;
+        flex-flow: column nowrap;
+        width: fit-content;
+        transition: 0.5s;
+        opacity: 0;
+        gap: 0.75rem;
+        opacity: 1;
+    }
+
+    .nav-bar ul {
+        display: none;
+    }
+
+    .nav-bar ul li a {
+        font-size: 1rem;
+        display: none;
+    }
+
+    .nav-bar.active ul li a {
+        font-size: 1rem;
+        display: contents;
+    }
+
     .about-text {
         width: 100%;
         margin-bottom: var(--MAIN-GAP);
@@ -1172,23 +1196,6 @@ pre {
 
     .nav-bar.active {
         height: fit-content;
-    }
-
-    .nav-bar ul  {
-        display: flex;
-        flex-flow: column nowrap;
-        width: fit-content;
-        transition: 0.5s;
-        opacity: 0;
-        gap: 0.75rem;
-    }
-
-    .nav-bar.active ul {
-        opacity: 1;
-    }
-
-    .nav-bar ul li a {
-        font-size: 1rem;
     }
 
     .nav-bar-active .intro-fig,
