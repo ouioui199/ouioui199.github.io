@@ -633,7 +633,6 @@ p {
 /* || PUBLICATIONS */
 .conferences-journals-communications {
     flex-flow: column nowrap;
-    height: 100vh;
     margin: var(--MAIN-GAP) var(--MAIN-LRMARGIN);
     gap: var(--MAIN-GAP)
 }
